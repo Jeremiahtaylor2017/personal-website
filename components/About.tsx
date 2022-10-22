@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
+import { urlFor } from '../sanity';
+import { PageInfo } from '../typings';
 
-type Props = {};
+type Props = {
+    pageInfo: PageInfo
+};
 
-export default function About({}: Props) {
+export default function About({ pageInfo }: Props) {
     return (
         <motion.div 
             initial={{
@@ -35,8 +39,8 @@ export default function About({}: Props) {
                 viewport={{
                     once: true
                 }}
-                src='https://i.imgur.com/bIhFdEr.jpeg'
-                className='-mb-20 md:mb-0 flex-shink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[400px] xl:h-[500px] xl:mt-5'
+                src={urlFor(pageInfo?.profilePic).url()}
+                className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[400px] xl:h-[500px] xl:mt-5'
             />
 
             <div className='space-y-10 px-0 sm:-mt-10 md:px-10'>
@@ -44,10 +48,7 @@ export default function About({}: Props) {
                     Here is a <span className='underline decoration-[#F7AB0A]/50'>little</span> background
                 </h4>
                 <p className='text-base'>
-                    I'm Jeremiah! 👋🏽 I've recently grauated from General Assembly's Software Engineering Immersive Coding Bootcamp and have a background in IT and security.
-                    I attended the United States Air Force Academy and Graduated from CSU, Sacramento in 2017 with a degree in Economics. I'm passionate about building something from nothing 
-                    and a special interest in what's going on behind the scenes of applications we use every day. Building full stack applications with creative solutions fuels my desire to learn
-                    and I bring my background of networking, infrastructure, and application management into every application I write.
+                    {pageInfo?.backgroundInformation}
                 </p>
             </div>
         </motion.div>
