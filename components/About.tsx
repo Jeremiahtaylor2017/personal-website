@@ -40,14 +40,14 @@ export default function About({ pageInfo }: Props) {
                     once: true
                 }}
                 src={urlFor(pageInfo?.profilePic).url()}
-                className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[400px] xl:h-[500px] xl:mt-5'
+                className='-mb-6 mt-28 md:mb-0 flex-shrink-0 w-48 h-48 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[400px] xl:h-[500px] xl:mt-5'
             />
 
-            <div className='space-y-10 px-0 sm:-mt-10 md:px-10'>
-                <h4 className='text-4xl font-semibold'>
+            <div className='space-y-4 px-0 sm:-mt-10 md:px-10'>
+                <h4 className='text-3xl md:text-4xl font-semibold'>
                     Here is a <span className='underline decoration-[#F7AB0A]/50'>little</span> background
                 </h4>
-                <p className='text-base'>
+                <p className='text-base overflow-y-auto'>
                     {pageInfo?.backgroundInformation}
                 </p>
             </div>

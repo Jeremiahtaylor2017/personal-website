@@ -23,12 +23,16 @@ export default function Projects({ projects }: Props) {
                 Projects
             </h3>
 
-            <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+            <h3 className='absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm'>
+                Scroll right for next project
+            </h3>
+
+            <div className="relative -mb-28 md:mb-0 w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
                 {projects.map((project, i) => (
-                    <div key={project._id} className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 xl:p-[30rem]">
+                    <div key={project._id} className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-10 md:p-44 xl:p-[30rem]">
                         <motion.img 
                             initial={{
-                                y: -300,
+                                y: -100,
                                 opacity: 0
                             }}
                             transition={{
@@ -43,16 +47,16 @@ export default function Projects({ projects }: Props) {
                             }}
                             src={urlFor(project?.image).url()}
                             alt="chatApp" 
-                            className='w-auto max-h-80'
+                            className='max-w-40 max-h-40 md:max-w-auto md:max-h-96'
                         />
-                        <div className="space-y-10 px-0 md:px-10 max-w-6xl">
+                        <div className="space-y-3 md:space-y-10 px-0 md:px-10 max-w-6xl">
                             <h4 className="text-4xl font-semibold text-center">
                                 <span className="underline decoration-[#F7AB0A]">
-                                    Case Study {i + 1} of {projects.length}:
+                                    Project {i + 1} of {projects.length}:
                                 </span> {project?.title}
                             </h4>
                             
-                            <div className='flex items-center sapce-x-2 justify-center'>
+                            <div className='flex items-center space-x-2 justify-center'>
                                 {project?.technologies.map(technology => (
                                     <img
                                     className='h-10 w-10'
@@ -61,7 +65,17 @@ export default function Projects({ projects }: Props) {
                                     alt="" />
                                     ))}
                             </div>
-                            <p className="text-lg text-center md:text-left">
+
+                            <div className='flex justify-center space-x-2 md:space-x-10'>
+                                <a href={project?.linkToBuild} target="_blank" rel="noopener noreferrer">
+                                    <button className="heroButton">Link to code</button>
+                                </a>
+                                <a href={project?.linkToSite} target="_blank" rel="noopener noreferrer">
+                                    <button className="heroButton">Deployed site</button>
+                                </a>
+                            </div>
+
+                            <p className="text-sm md:text-lg text-center md:text-left">
                                 {project?.summary}
                             </p>
                         </div>
