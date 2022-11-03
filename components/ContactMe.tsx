@@ -22,8 +22,8 @@ export default function ContactMe({}: Props) {
                 Contact
             </h3>
 
-            <div className="flex flex-col space-y-10">
-                <h4 className="text-4xl font-semibold text-center">
+            <div className="w-screen px-2 md:px-0 flex flex-col space-y-10">
+                <h4 className="text-3xl md:text-4xl font-semibold text-center">
                     I've got just what you need.{" "}
                     <span className="decoration-[#F7AB0A]/50 underline">Let's Talk.</span>
                 </h4>
@@ -37,9 +37,9 @@ export default function ContactMe({}: Props) {
 
                 <form 
                     onSubmit={handleSubmit(onSubmit)} 
-                    className='flex flex-col space-y-2 w-fit mx-auto'
+                    className='flex flex-col space-y-2 w-full md:w-fit mx-auto'
                 >
-                    <div className='flex space-x-2'>
+                    <div className='flex flex-col md:flex md:flex-row space-y-2 md:space-y-0 space-x-0 md:space-x-2'>
                         <input {...register('name')} placeholder='Name' className='contactInput' type="text" />
                         <input {...register('email')} placeholder='Email' className='contactInput' type="email" />
                     </div>

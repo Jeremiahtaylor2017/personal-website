@@ -52,5 +52,23 @@ export default {
         type: "string"
       }]
     }
+  ],
+  orderings: [
+    {
+      name: "startedLast",
+      title: "StartedLast",
+      by: [{
+        field: "dateStarted",
+        direction: "desc"
+      }]
+    },
+    {
+      name: "startedFirst",
+      title: "StartedFirst",
+      by: [{
+        field: "dateStarted",
+        direction: "asc"
+      }]
+    }
   ]
 }
