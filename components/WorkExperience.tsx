@@ -24,7 +24,11 @@ export default function WorkExperience({ experiences }: Props) {
                 Experience
             </h3>
 
-            <div className='w-full flex space-x-5 overflow-x-scroll p-10 mt-28 md:mt-10 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
+            <h3 className='absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm'>
+                Scroll right for next experience
+            </h3>
+
+            <div className='w-full flex space-x-5 overflow-x-scroll p-10 mt-36 md:mt-10 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
                 {experiences?.map(experience => (
                     <ExperienceCard
                         key={experience._id}
