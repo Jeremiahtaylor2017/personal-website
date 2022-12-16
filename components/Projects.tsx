@@ -47,7 +47,7 @@ export default function Projects({ projects }: Props) {
                             }}
                             src={urlFor(project?.image).url()}
                             alt="chatApp" 
-                            className='max-w-40 max-h-40 md:max-w-auto md:max-h-96'
+                            className='max-w-40 max-h-40 md:max-w-auto md:max-h-64'
                         />
                         <div className="space-y-3 md:space-y-10 px-0 md:px-10 max-w-6xl">
                             <h4 className="text-4xl font-semibold text-center">
