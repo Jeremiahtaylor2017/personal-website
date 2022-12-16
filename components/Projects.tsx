@@ -19,15 +19,15 @@ export default function Projects({ projects }: Props) {
                 duration: 1.5
             }}
             className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0">
-            <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+            <h3 className="absolute top-20 md:top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
                 Projects
             </h3>
 
-            <h3 className='absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm'>
+            <h3 className='absolute top-32 md:top-36 uppercase tracking-[3px] text-gray-500 text-sm'>
                 Scroll right for next project
             </h3>
 
-            <div className="relative -mb-28 md:mb-0 w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+            <div className="relative -mb-20 md:mb-0 w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
                 {projects.map((project, i) => (
                     <div key={project._id} className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-10 md:p-44 xl:p-[30rem]">
                         <motion.img 
@@ -75,7 +75,7 @@ export default function Projects({ projects }: Props) {
                                 </a>
                             </div>
 
-                            <p className="text-sm md:text-lg text-center md:text-left">
+                            <p className="text-sm md:text-lg text-center md:text-left overflow-y-auto">
                                 {project?.summary}
                             </p>
                         </div>
